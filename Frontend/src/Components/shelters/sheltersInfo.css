@@ -1,0 +1,123 @@
+.shelters_container {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    max-height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #eee;
+}
+
+.shelters_map {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 50px 0;
+}
+
+.shelters_map h5 {
+    padding: 15px 10px;
+}
+
+.shelters_map .map iframe {
+    width: 420px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+.shelters_info_container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.shelters_info_container h5 {
+    padding: 15px 10px;
+}
+
+.shelters_info_container .shelters_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.shelters_info table {
+    width: 90%;
+    height: 100%;
+    border-collapse: collapse;
+    border: 1.5px solid #B66089;
+}
+
+.shelters_info thead {
+    background-color: #B66089;
+    color: white;
+}
+
+.shelters_info tr {
+    border-bottom: 1px solid #B66089;
+}
+
+.shelters_info tr:last-child {
+    border-bottom: none;
+}
+
+.shelters_info th {
+    padding: 10px;
+    text-align: left;
+}
+
+.shelters_info td {
+    padding: 10px;
+    text-align: left;
+    border-left: 1px solid #B66089;
+}
+
+.shelters_info td:first-child {
+    border-left: none;
+}
+
+
+.shelters_info tbody tr:nth-child(odd) {
+    background-color: #FdFdFd;
+}
+
+.shelters_info tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+
+@media screen and (max-width: 768px) {
+    .shelters_container {
+        flex-direction: column;
+        padding: 0 0 30px 0;
+    }
+
+    .shelters_map {
+        width: 100%;
+    }
+
+    .shelters_map .map {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .shelters_map .map iframe {
+        width: 100%;
+    }
+
+    .shelters_info_container {
+        width: 100%;
+    }
+}

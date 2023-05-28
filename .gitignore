@@ -1,0 +1,5 @@
+# node_modules are in child directory Backend and Frontend
+# so we need to copy them to the root directory
+
+/Backend/node_modules/
+/Frontend/node_modules/

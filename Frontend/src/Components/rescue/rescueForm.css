@@ -1,0 +1,169 @@
+.form_container {
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+.form_container form {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px 20px;
+}
+
+form .form_title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+form .form_group {
+    width: 100%;
+    display: flex;
+    padding: 0 8rem;
+    margin-bottom: 30px;
+}
+
+form .form_group .form_label {
+    width: 15%;
+    font-size: 16px;
+    margin: 5px 30px 0 0;
+    text-align: right;
+}
+
+form .form_group .form_input {
+    width: 80%;
+}
+
+form .form_group .form_input input,
+form .form_group .form_input textarea {
+    width: 100%;
+    height: 35px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    outline-color: #B66089;
+    font-size: 1rem;
+}
+
+form .form_group .form_input textarea {
+    height: 100px;
+}
+
+form .form_group .form_file input {
+    width: 100%;
+    color: #6d2480;
+}
+
+form .form_group .form_input .location_button.current .icon,
+form .form_group .form_input .location_button.choose .icon {
+    margin-right: 5px;
+}
+
+
+form .form_group .form_input .location_button.current,
+form .form_group .form_input .location_button.choose {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    height: 30px;
+    font-size: .95rem;
+    cursor: pointer;
+    margin: 0 15px 15px 0;
+
+}
+
+form .form_group .form_input .location_button.current:hover,
+form .form_group .form_input .location_button.choose:hover {
+    background-color: #444;
+}
+
+
+
+
+form .divide {
+    height: 1px;
+    background-color: #ccc;
+    margin: 3rem 2rem;
+}
+
+form .form_group .form_button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+form .form_group .form_button button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6d2480;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    form .form_group {
+        padding: 0 2rem;
+    }
+
+    form .form_group .form_label {
+        width: 25%;
+    }
+
+    form .form_group .form_input {
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .form_container {
+        padding: 15px;
+    }
+
+    form .form_group {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    form .form_title {
+        text-align: center;
+    }
+
+    form .form_group .form_label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 10px;
+
+    }
+
+    form .form_group .form_input {
+        width: 100%;
+    }
+
+    form .form_group .form_input input,
+    form .form_group .form_input textarea {
+        font-size: .9rem;
+    }
+
+    form .divide {
+        margin: 2rem 1rem;
+    }
+
+    form .form_group .form_button button {
+        width: 100%;
+
+    }
+
+}

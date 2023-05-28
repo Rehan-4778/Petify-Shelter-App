@@ -1,0 +1,70 @@
+.rescue_request_item {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #FDFDFD;
+    border-bottom: 1px solid #eee;
+    gap: 10px;
+}
+
+.rescue_request_item_image {
+    width: 5%;
+    border-radius: 1px;
+    text-align: center;
+}
+
+.rescue_request_item_image img {
+    border-radius: 2px;
+    width: 50;
+    height: 50;
+}
+
+.rescue_request_item_name {
+    width: 40%;
+    color: #000;
+    text-align: left;
+    font-size: var(--font-size-medium);
+}
+
+.rescue_request_item_date {
+    width: 20%;
+    color: #000;
+    text-align: left;
+    font-size: var(--font-size-medium);
+}
+
+.rescue_request_item_status {
+    width: 20%;
+    color: #000;
+    text-align: left;
+    font-size: var(--font-size-medium);
+}
+
+.rescue_request_item_action {
+    width: 10%;
+    color: #000;
+    text-align: right;
+    font-size: var(--font-size-medium);
+}
+
+.rescue_request_item_action .viewBtn {
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.rescue_request_item_action .viewBtn:hover {
+    background-color: #444;
+    color: #fff;
+}

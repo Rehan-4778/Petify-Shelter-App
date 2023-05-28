@@ -1,0 +1,8 @@
+.nav-item:hover a {
+    background-color: #636e72;
+}
+
+.nav-item:hover a .icon,
+.nav-item:hover a span {
+    color: #fff;
+}

@@ -1,0 +1,185 @@
+.login_container {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_content {
+    height: auto;
+    background-color: #fff;
+    padding: 40px;
+
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form_logo h3 {
+    text-align: center;
+    color: #333333;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: .2ch;
+    margin-bottom: 15px;
+}
+
+.login_content .login_header h6 {
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.15ch;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group .form_email,
+.form-group .form_password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group .form_remember {
+    margin-bottom: 15px;
+}
+
+.form_remember input {
+    margin-left: 8px;
+}
+
+.form_email label,
+.form_password label,
+.form_remember label {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form_email input,
+.form_password input {
+    outline: none;
+    overflow: hidden;
+    width: 300px;
+    padding: 5px 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+
+}
+
+.form_email input:focus,
+.form_password input:focus {
+    outline: none;
+    border: 1.5px solid #0984e3;
+}
+
+
+.form_email input::placeholder,
+.form_password input::placeholder {
+    color: #999;
+    font-size: 15px;
+}
+
+
+
+
+.submitBtn button {
+    width: 100%;
+    background-color: #0984e3;
+    color: #fff;
+    padding: 5px 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form_forget {
+    text-align: right;
+}
+
+.form_forget a {
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+}
+
+.login_footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dividerLine {
+    margin-top: -10px;
+}
+
+.dividerLine span {
+    color: #999;
+}
+
+.dividerLine .span1,
+.dividerLine .span2 {
+    display: inline-block;
+    width: 42%;
+    height: 1px;
+    margin: 5px 0px;
+    background-color: #999;
+}
+
+.login_footer p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.login_footer a {
+    text-decoration: none;
+    color: #0984e3;
+    font-weight: 500;
+}
+
+.login_social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px;
+}
+
+.login_social .social_icon {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login_social .social_icon .icon {
+
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.login_social .social_icon .facebook {
+    color: rgb(67, 67, 255);
+    padding: 10px 12px;
+}
+
+.login_social .social_icon .twitter {
+    color: rgb(0, 172, 237);
+}
+
+.login_social .social_icon .google {
+    color: rgb(255, 0, 0);
+}

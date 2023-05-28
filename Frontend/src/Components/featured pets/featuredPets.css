@@ -1,0 +1,53 @@
+.featuredSection{
+    padding: 20px 0 40px 0;
+    background-color: #f2f3f3;
+    height:auto;
+}
+
+.Container{
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.featuredHeader{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:15px;
+}
+
+.petFeaturedLink{
+    align-self: flex-end;
+    margin: 30px 0;
+}
+
+
+@media screen and (max-width: 600px){
+    .content{
+        flex-wrap: nowrap;
+        width: 100%;
+        display: block;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 10px 10px;
+    }
+
+   .content::-webkit-scrollbar{
+        display: none;
+   }
+}

@@ -1,0 +1,196 @@
+.shelter_login_container {
+    background-color: #f0f2f5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shelter_login_content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 7px;
+    width: 360px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.info_content {
+    width: 75vw;
+    background-color: #fff;
+    padding: 20px 35px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.info_content .backBtn .icon {
+    color: #6c5ce7;
+    scale: 1.65;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.shelter_form_logo h3 {
+    text-align: center;
+    color: #333333;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: .2ch;
+    margin-bottom: 15px;
+}
+
+.shelter_login_content .shelter_login_header h6 {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.shelter_login-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group .form_email,
+.form-group .form_password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+.form-group .form_remember {
+    margin-bottom: 15px;
+}
+
+.form-group textarea {
+    outline: none;
+    width: 100%;
+    height: 120px;
+    padding: 5px 7px;
+    border-radius: 5px;
+    resize: none;
+    border: 1.5px solid #ccc;
+    font-size: 14px;
+}
+
+.form-group textarea:focus {
+    border: 1.5px solid #6c5ce7;
+}
+
+.form_remember input {
+    margin-left: 8px;
+}
+
+.form_name label,
+.form_email label,
+.form_password label,
+.form_remember label {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#emailHelp {
+    color: #999;
+    font-size: 12px;
+}
+
+.form_forget {
+    text-align: right;
+}
+
+.form_forget a {
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+}
+
+.shelter_login_footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dividerLine {
+    margin-top: -10px;
+}
+
+.dividerLine span {
+    color: #999;
+}
+
+.dividerLine .span1,
+.dividerLine .span2 {
+    display: inline-block;
+    width: 42%;
+    height: 1px;
+    margin: 5px 0px;
+    background-color: #999;
+}
+
+.shelter_login_footer p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.shelter_login_footer a {
+    text-decoration: none;
+    color: #6c5ce7;
+    font-weight: 500;
+}
+
+.login_social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px;
+}
+
+.login_social .social_icon {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login_social .social_icon .icon {
+
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.login_social .social_icon .facebook {
+    color: rgb(67, 67, 255);
+    padding: 10px 12px;
+}
+
+.login_social .social_icon .twitter {
+    color: rgb(0, 172, 237);
+}
+
+.login_social .social_icon .google {
+    color: rgb(255, 0, 0);
+}
+
+@media screen and (max-width: 768px) {
+    .shelter_login_container {
+        /* height: auto; */
+        height: calc(100vh - 60px);
+    }
+
+    .shelter_login_content {
+        width: 90vw;
+        padding: 40px 30px;
+    }
+
+    .info_content {
+        width: 100vw;
+        padding: 20px;
+    }
+}

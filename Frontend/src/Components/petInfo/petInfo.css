@@ -1,0 +1,149 @@
+.infoContainer{
+    width: 100%;
+    padding: 50px;
+    background-color: #ddd;
+}
+
+
+.slide-container{
+    border-radius: 10px;
+}
+
+
+.slide-container .icon{
+    color: #eee;
+    margin: 0 2px;
+    opacity: .6;
+    font-size: 2rem;
+}
+
+.pet-details{
+    margin: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.boxes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 12px 30px;
+}
+
+.box{
+    color: #333;
+    width: 200px;
+    height: 80px;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin: 10px;
+    border: 2px solid #B66089;
+
+}
+
+
+.gallery {
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 380px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    border-radius: 10px;
+  }
+
+.pet_description{
+    margin: 0 20px;
+    padding: 20px 30px;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.pet_description p{
+    color: #333;
+    margin: 10px 0px;
+}  
+
+.contact_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_Info{
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.contact_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    color: #333;
+    font-size: 20px;
+    background-color: #f3f3f4;
+}
+
+.contact_header h3{
+    color: #6d2480;
+    text-align: center;
+}
+
+.contact_header .tagline{
+    width: 170px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: #B66089;
+    border-radius: 20px;
+}
+
+.contact_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    color: #333;
+    font-size: 20px;
+    background-color: #dadada;
+    gap:20px;
+}
+
+.contact_details .phone_no{
+    width:70%;
+    text-align: center;
+    background-color: #6d2480;
+    color: #fff;
+    padding: 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact_details .message{
+    width:70%;
+    text-align: center;
+    background-color: #f3f3f3;
+    color: black;
+    padding: 15px 5px;
+    border-radius: 5px;
+    border: 1.2px solid #6d2480;
+    cursor: pointer;
+}
