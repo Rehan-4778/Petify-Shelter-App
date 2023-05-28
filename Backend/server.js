@@ -32,14 +32,11 @@ app.use(
     })
 );
 
-// Serve static files from the './uploads/images' directory
-app.use('/uploads/images', express.static('./uploads/images'));
-
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/shelter', require('./routes/shelter'));
 app.use('/api/rescue', require('./routes/rescue'));
 app.use('/api/petAd', require('./routes/petAd'));
-app.use('/api/image', require('./routes/ImageMulter'));
+app.use('/api/image', require('./routes/ImageUpload'));
 app.use('/api/shelterAuth', require('./routes/shelterAuth'));
 
 

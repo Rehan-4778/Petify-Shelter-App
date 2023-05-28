@@ -76,10 +76,7 @@ export default function PetAds() {
                 item.status === "Pending" && (
                   <ListItem
                     key={index}
-                    image={
-                      "https://petify-shelter-server.vercel.app/uploads/images/" +
-                      item.images[0]
-                    }
+                    image={item.images[0]}
                     name={item.name}
                     breed={item.breed}
                     date={item.date}

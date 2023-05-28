@@ -106,7 +106,8 @@ export default function AdPost(props) {
 
     // Upload Images
     const response = await fetch(
-      "https://petify-shelter-server.vercel.app/api/image/upload",
+      // "https://petify-shelter-server.vercel.app/api/image/upload",
+      "http://localhost:5000/api/image/upload",
       {
         method: "POST",
         body: mydata,
@@ -118,7 +119,7 @@ export default function AdPost(props) {
     if (response.status === 200) {
       const imageNames = [];
       json.forEach((image) => {
-        imageNames.push(image.filename);
+        imageNames.push(image);
       });
 
       // Post Ad

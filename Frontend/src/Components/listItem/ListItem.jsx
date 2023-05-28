@@ -11,10 +11,9 @@ export default function ListItem(props) {
         <img src={props.image} alt="pet" width={40} height={40} />
       </span>
       <span className="rescue_request_item_name">{props.name}</span>
-      {/* need only time without seconds not date */}
-      <sp className="rescue_request_item_date">
+      <span className="rescue_request_item_date">
         {new Date(props.date).toLocaleTimeString()}
-      </sp>
+      </span>
       <span
         className="rescue_request_item_status"
         style={{

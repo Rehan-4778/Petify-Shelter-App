@@ -16,13 +16,7 @@ const Card = (props) => {
       }}
     >
       <div className="imgBox">
-        <img
-          src={
-            "https://petify-shelter-server.vercel.app/uploads/images/" +
-            data.images[0]
-          }
-          alt="pet"
-        />
+        <img src={data.images[0]} alt="pet" />
       </div>
       <div className="contentBox">
         <h5>{data.name}</h5>

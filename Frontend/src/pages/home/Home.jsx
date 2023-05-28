@@ -24,7 +24,6 @@ export default function Home() {
     );
 
     let petAdsData = await petAdsResponse.json();
-    console.log(petAdsData);
     setAdsData(petAdsData);
 
     // let featuredPetsResponse = await fetch(
