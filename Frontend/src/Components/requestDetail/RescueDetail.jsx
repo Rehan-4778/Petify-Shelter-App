@@ -52,7 +52,7 @@ function RescueDetail(props) {
 
   const handleApprove = async () => {
     const response = await fetch(
-      `http://localhost:5000/api/rescue/updaterescue/${data._id}`,
+      `https://petify-shelter-server.vercel.app/api/rescue/updaterescue/${data._id}`,
       {
         method: "PUT",
         headers: {
@@ -81,7 +81,7 @@ function RescueDetail(props) {
 
   const handleReject = async () => {
     const response = await fetch(
-      `http://localhost:5000/api/rescue/deleterescue/${data._id}`,
+      `https://petify-shelter-server.vercel.app/api/rescue/deleterescue/${data._id}`,
       {
         method: "DELETE",
         headers: {
@@ -138,7 +138,7 @@ function RescueDetail(props) {
                 <div
                   className="gallery"
                   style={{
-                    backgroundImage: `url(http://localhost:5000/uploads/images/${slideImage}) `,
+                    backgroundImage: `url(https://petify-shelter-server.vercel.app/uploads/images/${slideImage}) `,
                   }}
                 ></div>
               </div>

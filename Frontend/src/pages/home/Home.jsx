@@ -12,7 +12,7 @@ export default function Home() {
 
   const GetPetsData = async () => {
     let petAdsResponse = await fetch(
-      "http://localhost:5000/api/petAd/fetchallads",
+      "https://petify-shelter-server.vercel.app/api/petAd/fetchallads",
       {
         method: "GET",
         headers: {
@@ -28,7 +28,7 @@ export default function Home() {
     setAdsData(petAdsData);
 
     // let featuredPetsResponse = await fetch(
-    //   "http://localhost:5000/api/rescue/fetchallrescue",
+    //   "https://petify-shelter-server.vercel.app/api/rescue/fetchallrescue",
     //   {
     //     method: "GET",
     //     headers: {

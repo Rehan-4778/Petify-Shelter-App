@@ -26,18 +26,21 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = credentials;
-    const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name.toString(),
-        email: email.toString(),
-        type: "user".toString(),
-        password: password.toString(),
-      }),
-    });
+    const response = await fetch(
+      `https://petify-shelter-server.vercel.app/api/auth/createuser`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.toString(),
+          email: email.toString(),
+          type: "user".toString(),
+          password: password.toString(),
+        }),
+      }
+    );
     const json = await response.json();
     console.log(json);
     if (json.success) {

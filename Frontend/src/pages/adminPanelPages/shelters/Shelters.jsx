@@ -5,7 +5,7 @@ function Shelters() {
   const [shelters, setShelters] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/shelterAuth/shelters", {
+    fetch("https://petify-shelter-server.vercel.app/api/shelterAuth/shelters", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function Shelters() {
             <ListItem
               data={shelter}
               key={shelter._id}
-              image="http://localhost:3000/uploads/images/1684793284056-splash.jpg"
+              image="https://petify-shelter-server.vercel.app/uploads/images/1684793284056-splash.jpg"
               name={shelter.name}
               date={shelter.phone}
               status={shelter.status}

@@ -10,7 +10,7 @@ export default function PetAds() {
 
   const getAllAds = async () => {
     const response = await fetch(
-      "http://localhost:5000/api/petAd/fetchallads",
+      "https://petify-shelter-server.vercel.app/api/petAd/fetchallads",
       {
         method: "GET",
         headers: {
@@ -77,7 +77,8 @@ export default function PetAds() {
                   <ListItem
                     key={index}
                     image={
-                      "http://localhost:5000/uploads/images/" + item.images[0]
+                      "https://petify-shelter-server.vercel.app/uploads/images/" +
+                      item.images[0]
                     }
                     name={item.name}
                     breed={item.breed}
@@ -95,7 +96,8 @@ export default function PetAds() {
                   <ListItem
                     key={index}
                     image={
-                      "http://localhost:5000/uploads/images/" + item.images[0]
+                      "https://petify-shelter-server.vercel.app/uploads/images/" +
+                      item.images[0]
                     }
                     name={item.name}
                     breed={item.breed}

@@ -105,10 +105,13 @@ export default function AdPost(props) {
     }
 
     // Upload Images
-    const response = await fetch("http://localhost:5000/api/image/upload", {
-      method: "POST",
-      body: mydata,
-    });
+    const response = await fetch(
+      "https://petify-shelter-server.vercel.app/api/image/upload",
+      {
+        method: "POST",
+        body: mydata,
+      }
+    );
 
     const json = await response.json();
 
@@ -120,7 +123,7 @@ export default function AdPost(props) {
 
       // Post Ad
       const response2 = await fetch(
-        "http://localhost:5000/api/petAd/createad",
+        "https://petify-shelter-server.vercel.app/api/petAd/createad",
         {
           method: "POST",
           headers: {

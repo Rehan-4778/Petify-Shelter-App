@@ -23,7 +23,7 @@ const Login = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      `http://localhost:5000/api/shelterAuth/login`,
+      `https://petify-shelter-server.vercel.app/api/shelterAuth/login`,
       {
         method: "POST",
         headers: {

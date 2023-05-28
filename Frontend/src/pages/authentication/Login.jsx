@@ -20,16 +20,19 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`http://localhost:5000/api/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: credentials.email.toString(),
-        password: credentials.password.toString(),
-      }),
-    });
+    const response = await fetch(
+      `https://petify-shelter-server.vercel.app/api/auth/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: credentials.email.toString(),
+          password: credentials.password.toString(),
+        }),
+      }
+    );
     const json = await response.json();
     console.log(json);
     if (json.success) {

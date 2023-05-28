@@ -56,7 +56,7 @@ const Signup = (props) => {
     e.preventDefault();
 
     const response = await fetch(
-      `http://localhost:5000/api/shelterAuth/checkshelter`,
+      `https://petify-shelter-server.vercel.app/api/shelterAuth/checkshelter`,
       {
         method: "POST",
         headers: {
@@ -108,10 +108,13 @@ const Signup = (props) => {
       mydata.append("files", credentials.images[i], filename);
     }
 
-    const response = await fetch("http://localhost:5000/api/image/upload", {
-      method: "POST",
-      body: mydata,
-    });
+    const response = await fetch(
+      "https://petify-shelter-server.vercel.app/api/image/upload",
+      {
+        method: "POST",
+        body: mydata,
+      }
+    );
     const data = await response.json();
 
     if (response.status === 200) {
@@ -120,7 +123,7 @@ const Signup = (props) => {
         imageNames.push(image.filename);
       });
       const response2 = await fetch(
-        "http://localhost:5000/api/shelterAuth/createshelter",
+        "https://petify-shelter-server.vercel.app/api/shelterAuth/createshelter",
         {
           method: "POST",
           headers: {
@@ -139,8 +142,6 @@ const Signup = (props) => {
         navigate("/shelter/login");
       }
     }
-
-
   };
 
   return (

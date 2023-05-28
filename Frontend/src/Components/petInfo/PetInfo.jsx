@@ -55,7 +55,7 @@ export default function PetInfo(props) {
                 <div
                   className="gallery"
                   style={{
-                    backgroundImage: `url("http://localhost:5000/uploads/images/${slideImage}")`,
+                    backgroundImage: `url("https://petify-shelter-server.vercel.app/uploads/images/${slideImage}")`,
                   }}
                 ></div>
               </div>

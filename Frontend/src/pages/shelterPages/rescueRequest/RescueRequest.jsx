@@ -8,7 +8,7 @@ export default function RescueRequest() {
   useEffect(() => {
     const getRescueData = async () => {
       const response = await fetch(
-        `http://localhost:5000/api/rescue/fetchallrescue`,
+        `https://petify-shelter-server.vercel.app/api/rescue/fetchallrescue`,
         {
           method: "GET",
           headers: {
@@ -79,7 +79,7 @@ export default function RescueRequest() {
                     <ListItem
                       data={item}
                       key={index}
-                      image={`http://localhost:5000/uploads/images/${item.images[0]}`}
+                      image={`https://petify-shelter-server.vercel.app/uploads/images/${item.images[0]}`}
                       name={item.contactNumber}
                       date={item.date}
                       status={item.status}
@@ -96,7 +96,7 @@ export default function RescueRequest() {
                     <ListItem
                       data={item}
                       key={index}
-                      image={`http://localhost:5000/uploads/images/${item.images[0]}`}
+                      image={`https://petify-shelter-server.vercel.app/uploads/images/${item.images[0]}`}
                       name={item.contactNumber}
                       date={item.date}
                       status={item.status}
@@ -113,7 +113,7 @@ export default function RescueRequest() {
                     <ListItem
                       data={item}
                       key={index}
-                      image={`http://localhost:5000/uploads/images/${item.images[0]}`}
+                      image={`https://petify-shelter-server.vercel.app/uploads/images/${item.images[0]}`}
                       name={item.contactNumber}
                       date={item.date}
                       status={item.status}

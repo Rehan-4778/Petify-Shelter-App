@@ -37,7 +37,7 @@ function Details() {
 
   const handleApprove = async () => {
     const response = await fetch(
-      `http://localhost:5000/api/shelterAuth/updateshelter/${data._id}`,
+      `https://petify-shelter-server.vercel.app/api/shelterAuth/updateshelter/${data._id}`,
       {
         method: "PUT",
         headers: {
@@ -56,7 +56,7 @@ function Details() {
 
   const handleReject = async () => {
     const response = await fetch(
-      `http://localhost:5000/api/shelterAuth/deleteshelter/${data._id}`,
+      `https://petify-shelter-server.vercel.app/api/shelterAuth/deleteshelter/${data._id}`,
       {
         method: "DELETE",
         headers: {

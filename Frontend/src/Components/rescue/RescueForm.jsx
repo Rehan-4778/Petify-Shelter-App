@@ -79,10 +79,13 @@ export default function RescueForm() {
     }
 
     /// Upload images to server
-    const response = await fetch("http://localhost:5000/api/image/upload", {
-      method: "POST",
-      body: mydata,
-    });
+    const response = await fetch(
+      "https://petify-shelter-server.vercel.app/api/image/upload",
+      {
+        method: "POST",
+        body: mydata,
+      }
+    );
 
     const data = await response.json();
 
@@ -93,7 +96,7 @@ export default function RescueForm() {
       });
 
       const response2 = await fetch(
-        "http://localhost:5000/api/rescue/createrescue",
+        "https://petify-shelter-server.vercel.app/api/rescue/createrescue",
         {
           method: "POST",
           headers: {
