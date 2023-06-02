@@ -1,3 +1,11 @@
+.nav-item a {
+    padding: 0 18px;
+}
+
+.nav-item .icon {
+    margin-right: 10px;
+}
+
 .nav-item:hover a {
     background-color: #636e72;
 }
@@ -5,4 +13,51 @@
 .nav-item:hover a .icon,
 .nav-item:hover a span {
     color: #fff;
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-item a {
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-item .icon {
+        font-size: 1.35rem;
+        margin: 0;
+    }
+
+    .nav-item .nav-item-title {
+        display: none;
+    }
+}
+
+/* Mobile  */
+@media (max-width: 576px) {
+    .nav-item {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-item a {
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-item .icon {
+        font-size: 1.35rem;
+        margin: 0;
+    }
+
+    .nav-item .nav-item-title {
+        display: none;
+    }
 }

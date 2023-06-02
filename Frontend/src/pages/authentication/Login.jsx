@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import BASE_URL from "../../config";
 import "./login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -20,19 +21,16 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/auth/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: credentials.email.toString(),
-          password: credentials.password.toString(),
-        }),
-      }
-    );
+    const response = await fetch(`${BASE_URL}/api/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: credentials.email.toString(),
+        password: credentials.password.toString(),
+      }),
+    });
     const json = await response.json();
     console.log(json);
     if (json.success) {

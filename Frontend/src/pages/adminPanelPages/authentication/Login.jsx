@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import petifyContext from "../../../context/petifyContextApi/petifyContext";
+import BASE_URL from "../../../config";
 
 const Login = (props) => {
   const context = useContext(petifyContext);
@@ -20,19 +21,16 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/auth/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: credentials.email.toString(),
-          password: credentials.password.toString(),
-        }),
-      }
-    );
+    const response = await fetch(`${BASE_URL}/api/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: credentials.email.toString(),
+        password: credentials.password.toString(),
+      }),
+    });
     const json = await response.json();
     console.log(json);
     if (json.success) {
@@ -114,40 +112,6 @@ const Login = (props) => {
                 </div> */}
               </div>
             </form>
-            {/* <div className="login_footer">
-              <div className="dividerLine">
-                <span className="span1"></span>
-                <span> OR </span>
-                <span className="span2"></span>
-              </div>
-
-              <div className="login_social">
-                <div className="social_icon">
-                  <a href="/" className="social_link">
-                    <FontAwesomeIcon
-                      className="icon facebook"
-                      icon={faFacebookF}
-                    />
-                  </a>
-
-                  <a href="/" className="social_link">
-                    <FontAwesomeIcon
-                      className="icon twitter"
-                      icon={faTwitter}
-                    />
-                  </a>
-
-                  <a href="/" className="social_link">
-                    <FontAwesomeIcon className="icon google" icon={faGoogle} />
-                  </a>
-                </div>
-              </div>
-
-              <p>
-                Don't have an account?
-                <Link to="/signup"> Sign Up</Link>
-              </p>
-            </div> */}
           </div>
         </div>
       </div>

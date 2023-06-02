@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import UploadImage from "../UploadImages/UploadImage";
+import BASE_URL from "../../config";
 
 export default function RescueForm() {
   const context = useContext(PetifyContext);
@@ -79,33 +80,27 @@ export default function RescueForm() {
     }
 
     /// Upload images to server
-    const response = await fetch(
-      "https://petify-shelter-server.vercel.app/api/image/upload",
-      {
-        method: "POST",
-        body: mydata,
-      }
-    );
+    const response = await fetch(`${BASE_URL}/api/image/upload`, {
+      method: "POST",
+      body: mydata,
+    });
 
     const data = await response.json();
 
     if (response.status === 200) {
       const imageNames = [];
       data.forEach((image) => {
-        imageNames.push(image.filename);
+        imageNames.push(image);
       });
 
-      const response2 = await fetch(
-        "https://petify-shelter-server.vercel.app/api/rescue/createrescue",
-        {
-          method: "POST",
-          headers: {
-            "auth-token": localStorage.getItem("token"),
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...RescueData, images: imageNames }),
-        }
-      );
+      const response2 = await fetch(`${BASE_URL}/api/rescue/createrescue`, {
+        method: "POST",
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...RescueData, images: imageNames }),
+      });
 
       const data2 = await response2.json();
 

@@ -9,7 +9,6 @@ export default function NavItem(props) {
     alignItems: "center",
     width: "100%",
     height: "46px",
-    padding: "0 18px",
     textDecoration: "none",
     color: "#FDFDFD",
     fontSize: "1rem",
@@ -47,12 +46,8 @@ export default function NavItem(props) {
             : itemStyle
         }
       >
-        <FontAwesomeIcon
-          className="icon"
-          icon={props.icon}
-          style={{ marginRight: "10px" }}
-        />
-        <span>{props.title}</span>
+        <FontAwesomeIcon className="icon" icon={props.icon} />
+        <span className="nav-item-title">{props.title}</span>
       </Link>
     </li>
   );

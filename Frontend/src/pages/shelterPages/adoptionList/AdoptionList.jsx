@@ -69,20 +69,40 @@ const AdoptionList = () => {
             <span className="rescue_request_item_status heading">Status</span>
             <span className="rescue_request_item_action heading">Action</span>
           </div>
-          {adoptionList.map((item, index) => {
-            return (
-              item.status === active && (
-                <ListItem
-                  key={index}
-                  image={item.image}
-                  name={item.name}
-                  date={item.date}
-                  status={item.status}
-                  buttonLink="/shelter/adoptionList"
-                />
-              )
-            );
-          })}
+          {active === "Available" &&
+            adoptionList.length > 0 &&
+            adoptionList.map((item, index) => {
+              return (
+                item.status === "Available" && (
+                  <ListItem
+                    key={item._id}
+                    data={item}
+                    image={item.image}
+                    name={item.name}
+                    date={item.date}
+                    status={item.status}
+                    buttonLink={"/shelter/adopt-detail/" + item._id}
+                  />
+                )
+              );
+            })}
+          {active === "Adopted" &&
+            adoptionList.length > 0 &&
+            adoptionList.map((item, index) => {
+              return (
+                item.status === "Adopted" && (
+                  <ListItem
+                    key={item._id}
+                    data={item}
+                    image={item.image}
+                    name={item.name}
+                    date={item.date}
+                    status={item.status}
+                    buttonLink={"/shelter/adopt-detail/" + item._id}
+                  />
+                )
+              );
+            })}
         </div>
       </div>
     </div>

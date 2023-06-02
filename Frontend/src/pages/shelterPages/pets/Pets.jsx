@@ -49,11 +49,12 @@ export default function Pets() {
           {pets.map((pet, index) => (
             <ListItem
               key={index}
+              data={pet}
               name={pet.name}
               date={pet.age}
               image={pet.image}
               status={pet.breed}
-              buttonLink="/abc"
+              buttonLink={"/shelter/pet-detail/" + pet._id}
             />
           ))}
         </div>

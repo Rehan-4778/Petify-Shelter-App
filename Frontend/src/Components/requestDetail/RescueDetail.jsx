@@ -1,3 +1,4 @@
+import BASE_URL from "../../config";
 import React, { useState, useEffect, useContext } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
@@ -52,7 +53,7 @@ function RescueDetail(props) {
 
   const handleApprove = async () => {
     const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/rescue/updaterescue/${data._id}`,
+      `${BASE_URL}/api/rescue/updaterescue/${data._id}`,
       {
         method: "PUT",
         headers: {
@@ -81,7 +82,7 @@ function RescueDetail(props) {
 
   const handleReject = async () => {
     const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/rescue/deleterescue/${data._id}`,
+      `${BASE_URL}/api/rescue/deleterescue/${data._id}`,
       {
         method: "DELETE",
         headers: {
@@ -138,7 +139,7 @@ function RescueDetail(props) {
                 <div
                   className="gallery"
                   style={{
-                    backgroundImage: `url(https://petify-shelter-server.vercel.app/uploads/images/${slideImage}) `,
+                    backgroundImage: `url(${slideImage})`,
                   }}
                 ></div>
               </div>

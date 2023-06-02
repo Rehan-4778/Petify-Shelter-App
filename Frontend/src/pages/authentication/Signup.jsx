@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import PetifyContext from "../../context/petifyContextApi/petifyContext";
+import BASE_URL from "../../config";
 
 const Signup = (props) => {
   const context = useContext(PetifyContext);
@@ -26,21 +27,18 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = credentials;
-    const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/auth/createuser`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name.toString(),
-          email: email.toString(),
-          type: "user".toString(),
-          password: password.toString(),
-        }),
-      }
-    );
+    const response = await fetch(`${BASE_URL}/api/auth/createuser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name.toString(),
+        email: email.toString(),
+        type: "user".toString(),
+        password: password.toString(),
+      }),
+    });
     const json = await response.json();
     console.log(json);
     if (json.success) {

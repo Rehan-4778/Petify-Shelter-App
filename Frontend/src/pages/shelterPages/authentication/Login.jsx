@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./login.css";
+import BASE_URL from "../../../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullButton from "../../../Components/Buttons/FullButton";
 import {
@@ -23,7 +24,7 @@ const Login = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/shelterAuth/login`,
+      `${BASE_URL}/api/shelterAuth/login`,
       {
         method: "POST",
         headers: {

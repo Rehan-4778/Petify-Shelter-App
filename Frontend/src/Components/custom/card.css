@@ -1,0 +1,20 @@
+.Dashboard__Card {
+    width: 30%;
+    height: 135px;
+}
+
+@media (max-width: 768px) {
+    .Dashboard__Card {
+        width: 45%;
+        margin: 0 auto 30px auto;
+        height: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .Dashboard__Card {
+        width: 90%;
+        height: 140px;
+        margin: 0 auto 30px auto;
+    }
+}

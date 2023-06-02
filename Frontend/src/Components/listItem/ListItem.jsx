@@ -11,6 +11,9 @@ export default function ListItem(props) {
         <img src={props.image} alt="pet" width={40} height={40} />
       </span>
       <span className="rescue_request_item_name">{props.name}</span>
+      {props.breed && <span className="rescue_request_item_name">
+        {props.breed}
+        </span>}
       <span className="rescue_request_item_date">
         {new Date(props.date).toLocaleTimeString()}
       </span>

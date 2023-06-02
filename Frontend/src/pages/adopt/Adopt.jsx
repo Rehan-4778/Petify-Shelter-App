@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../../Components/sidebar search/Sidebar";
 import FeaturedPets from "../../Components/featured pets/FeaturedPets";
 import Card from "../../Components/petCard/Card";
+import BASE_URL from "../../config";
 
 export default function Adopt() {
   const [adsData, setAdsData] = useState([]);
@@ -9,7 +10,7 @@ export default function Adopt() {
 
   const GetPetsData = async () => {
     let petAdsResponse = await fetch(
-      "https://petify-shelter-server.vercel.app/api/postAd/fetchallpost",
+      `${BASE_URL}/api/postAd/fetchallpost`,
       {
         method: "GET",
         headers: {
@@ -24,7 +25,7 @@ export default function Adopt() {
     console.log(petAdsData);
 
     let featuredPetsResponse = await fetch(
-      "https://petify-shelter-server.vercel.app/api/rescue/fetchallrescue",
+      `${BASE_URL}/api/rescue/fetchallrescue`,
       {
         method: "GET",
         headers: {

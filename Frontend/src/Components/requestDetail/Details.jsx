@@ -14,6 +14,7 @@ import MapGL, {
   Marker,
   NavigationControl,
 } from "react-map-gl";
+import BASE_URL from "../../config";
 
 function Details() {
   const location = useLocation();
@@ -37,7 +38,7 @@ function Details() {
 
   const handleApprove = async () => {
     const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/shelterAuth/updateshelter/${data._id}`,
+      `${BASE_URL}/api/shelterAuth/updateshelter/${data._id}`,
       {
         method: "PUT",
         headers: {
@@ -56,7 +57,7 @@ function Details() {
 
   const handleReject = async () => {
     const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/shelterAuth/deleteshelter/${data._id}`,
+      `${BASE_URL}/api/shelterAuth/deleteshelter/${data._id}`,
       {
         method: "DELETE",
         headers: {
@@ -100,7 +101,7 @@ function Details() {
               <div className="each-slide" key={index}>
                 <div
                   className="gallery"
-                  style={{ backgroundImage: `url(${slideImage.url}) ` }}
+                  style={{ backgroundImage: `url(${slideImage}) ` }}
                 ></div>
               </div>
             ))}

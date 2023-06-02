@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import "./card.css";
 
 const Card = (props) => {
   return (
     <div
+      className="Dashboard__Card"
       style={{
         position: "relative",
         display: "flex",
@@ -11,8 +13,6 @@ const Card = (props) => {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "0 1rem",
-        width: props.width,
-        height: props.height,
         backgroundColor: props.backgroundColor,
         borderRadius: props.borderRadius,
         boxShadow: props.boxShadow,
@@ -86,10 +86,19 @@ const Card = (props) => {
             fontSize: ".9rem",
           }}
         >
-          <span style={{ color: "green", fontWeight: "600" }}> +30%</span>
+          <span
+            style={
+              props.percentage[0] === "+"
+                ? { color: "green", fontWeight: "600", letterSpacing: "0.06rem" }
+                : { color: "red", fontWeight: "600", letterSpacing: "0.06rem" }
+            }
+          >
+            {" "}
+            {props.percentage}
+          </span>
           <span style={{ color: props.titleColor, fontWeight: 300 }}>
             {" "}
-            than last week
+            than last month
           </span>
         </div>
       </div>

@@ -2,8 +2,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
     width: 20vw;
+    height: 100%;
     transition: all 0.3s;
     z-index: 1000;
 }
@@ -72,4 +72,58 @@
 .logout a .icon {
     transform: rotate(180deg);
     margin-right: 10px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .side-navbar {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 15vw;
+    }
+
+    .side-navbar__logo img {
+        margin-right: 0;
+    }
+
+    .side-navbar__menu ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .logout span {
+        display: none;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .side-navbar__menu {
+
+        height: calc(100vh - 400px);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logout {
+        position: static;
+    }
+
+    .logout a .icon {
+        margin: 0;
+    }
+
+    .side-navbar__menu {
+        align-self: center;
+    }
 }

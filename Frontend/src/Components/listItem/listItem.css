@@ -69,3 +69,34 @@
     background-color: #444;
     color: #fff;
 }
+
+/* Mobile */
+@media (max-width : 576px) {
+
+    .rescue_request_item_image {
+        width: 15%;
+    }
+
+    .rescue_request_item_name {
+        font-size: 0.8rem;
+        width: 30%;
+    }
+
+    .rescue_request_item_date {
+        width: 30%;
+        font-size: 0.8rem;
+    }
+
+    .rescue_request_item_status {
+        display: none;
+    }
+
+    .rescue_request_item_action {
+        font-size: 0.8rem;
+    }
+
+    .rescue_request_item_action .viewBtn {
+        font-size: 10px;
+        font-weight: 600;
+    }
+}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ListItem from "../../../Components/listItem/ListItem";
+import BASE_URL from "../../../config";
 
 function Shelters() {
   const [shelters, setShelters] = useState([]);
 
   useEffect(() => {
-    fetch("https://petify-shelter-server.vercel.app/api/shelterAuth/shelters", {
+    fetch(`${BASE_URL}/api/shelterAuth/shelters`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +50,7 @@ function Shelters() {
             <ListItem
               data={shelter}
               key={shelter._id}
-              image="https://petify-shelter-server.vercel.app/uploads/images/1684793284056-splash.jpg"
+              image={shelter.images[0]}
               name={shelter.name}
               date={shelter.phone}
               status={shelter.status}

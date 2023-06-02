@@ -8,6 +8,7 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import PetifyContext from "../../context/petifyContextApi/petifyContext";
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import BASE_URL from "../../config";
 
 export default function AdPost(props) {
   const context = useContext(PetifyContext);
@@ -106,8 +107,7 @@ export default function AdPost(props) {
 
     // Upload Images
     const response = await fetch(
-      // "https://petify-shelter-server.vercel.app/api/image/upload",
-      "http://localhost:5000/api/image/upload",
+      `${BASE_URL}/api/image/upload`,
       {
         method: "POST",
         body: mydata,
@@ -124,7 +124,7 @@ export default function AdPost(props) {
 
       // Post Ad
       const response2 = await fetch(
-        "https://petify-shelter-server.vercel.app/api/petAd/createad",
+        `${BASE_URL}/api/petAd/createad`,
         {
           method: "POST",
           headers: {

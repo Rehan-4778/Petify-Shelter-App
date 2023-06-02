@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../../config";
 import "./login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -56,7 +57,7 @@ const Signup = (props) => {
     e.preventDefault();
 
     const response = await fetch(
-      `https://petify-shelter-server.vercel.app/api/shelterAuth/checkshelter`,
+      `${BASE_URL}/api/shelterAuth/checkshelter`,
       {
         method: "POST",
         headers: {
@@ -109,7 +110,7 @@ const Signup = (props) => {
     }
 
     const response = await fetch(
-      "https://petify-shelter-server.vercel.app/api/image/upload",
+      `${BASE_URL}/api/image/upload`,
       {
         method: "POST",
         body: mydata,
@@ -120,10 +121,10 @@ const Signup = (props) => {
     if (response.status === 200) {
       const imageNames = [];
       data.forEach((image) => {
-        imageNames.push(image.filename);
+        imageNames.push(image);
       });
       const response2 = await fetch(
-        "https://petify-shelter-server.vercel.app/api/shelterAuth/createshelter",
+        `${BASE_URL}/api/shelterAuth/createshelter`,
         {
           method: "POST",
           headers: {

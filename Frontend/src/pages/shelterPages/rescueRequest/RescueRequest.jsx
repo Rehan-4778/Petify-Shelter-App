@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./rescueRequest.css";
 import ListItem from "../../../Components/listItem/ListItem";
+import BASE_URL from "../../../config";
 
 export default function RescueRequest() {
   const [rescueData, setRescueData] = useState([]);
 
   useEffect(() => {
     const getRescueData = async () => {
-      const response = await fetch(
-        `https://petify-shelter-server.vercel.app/api/rescue/fetchallrescue`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("shelter-token"),
-          },
-        }
-      );
+      const response = await fetch(`${BASE_URL}/api/rescue/fetchallrescue`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("shelter-token"),
+        },
+      });
       const json = await response.json();
       if (json.success) {
         setRescueData(json.rescue);
@@ -79,7 +77,7 @@ export default function RescueRequest() {
                     <ListItem
                       data={item}
                       key={index}
-                      image={`https://petify-shelter-server.vercel.app/uploads/images/${item.images[0]}`}
+                      image={item.images[0]}
                       name={item.contactNumber}
                       date={item.date}
                       status={item.status}
@@ -96,7 +94,7 @@ export default function RescueRequest() {
                     <ListItem
                       data={item}
                       key={index}
-                      image={`https://petify-shelter-server.vercel.app/uploads/images/${item.images[0]}`}
+                      image={item.images[0]}
                       name={item.contactNumber}
                       date={item.date}
                       status={item.status}
@@ -113,7 +111,7 @@ export default function RescueRequest() {
                     <ListItem
                       data={item}
                       key={index}
-                      image={`https://petify-shelter-server.vercel.app/uploads/images/${item.images[0]}`}
+                      image={item.images[0]}
                       name={item.contactNumber}
                       date={item.date}
                       status={item.status}

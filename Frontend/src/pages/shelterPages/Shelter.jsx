@@ -8,6 +8,7 @@ import PetAds from "./petAds/PetAds";
 import AdoptionList from "./adoptionList/AdoptionList";
 import Login from "./authentication/Login";
 import Signup from "./authentication/Signup";
+import "./shelter.css";
 
 import { faDashboard } from "@fortawesome/free-solid-svg-icons";
 import { faShieldDog } from "@fortawesome/free-solid-svg-icons";
@@ -48,12 +49,12 @@ export default function Shelter() {
   ]);
 
   useEffect(() => {
-    const token = localStorage.getItem("shelter-token");
-    if (!token) {
-      navigate("/shelter/login");
-    } else {
-      setTokenExists(true);
-    }
+    // const token = localStorage.getItem("shelter-token");
+    // if (!token) {
+    //   navigate("/shelter/login");
+    // } else {
+    //   setTokenExists(true);
+    // }
   }, []);
 
   return (
@@ -64,13 +65,18 @@ export default function Shelter() {
         backgroundColor: "#4B4B4B",
       }}
     >
-      {tokenExists && (
-        <div style={{ width: "20vw" }}>
-          <SideNavbar navItems={navItems} activeColor="#6c5ce7" />
-        </div>
-      )}
+      {/* {tokenExists && ( */}
+      <div className="dashboard__sidenav">
+        <SideNavbar navItems={navItems} activeColor="#6c5ce7" />
+      </div>
+      {/* )} */}
 
-      <div style={tokenExists ? { width: "80vw" } : { width: "100vw" }}>
+      <div
+        className={
+          // tokenExists ? "dashboard_custom_content" : "dashboard_full_content"
+          "dashboard_custom_content"
+        }
+      >
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -81,6 +87,9 @@ export default function Shelter() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/rescue-detail/:id" element={<RescueDetail />} />
+          <Route path="/ad-detail/:id" element={<RescueDetail />} />
+          <Route path="/adopt-detail/:id" element={<RescueDetail />} />
+          <Route path="/pet-detail/:id" element={<RescueDetail />} />
         </Routes>
       </div>
     </div>

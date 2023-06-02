@@ -3,22 +3,20 @@ import "./petAds.css";
 import ListItem from "../../../Components/listItem/ListItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
+import BASE_URL from "../../../config.js";
 
 export default function PetAds() {
   const [active, setActive] = useState("Incoming");
   const [petAds, setPetAds] = useState([]);
 
   const getAllAds = async () => {
-    const response = await fetch(
-      "https://petify-shelter-server.vercel.app/api/petAd/fetchallads",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("shelter-token"),
-        },
-      }
-    );
+    const response = await fetch(`${BASE_URL}/api/petAd/fetchallads`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("shelter-token"),
+      },
+    });
 
     const data = await response.json();
     console.log(data);
@@ -27,6 +25,7 @@ export default function PetAds() {
 
   useEffect(() => {
     getAllAds();
+    console.log(petAds);
   }, []);
 
   return (
@@ -65,7 +64,8 @@ export default function PetAds() {
         <div className="petAds_list">
           <div className="rescue_request_item">
             <span className="rescue_request_item_image heading">Image</span>
-            <span className="rescue_request_item_name heading">Location</span>
+            <span className="rescue_request_item_name heading">Name</span>
+            <span className="rescue_request_item_name heading">Breed</span>
             <span className="rescue_request_item_date heading">Time</span>
             <span className="rescue_request_item_status heading">Status</span>
             <span className="rescue_request_item_action heading">Action</span>
@@ -75,13 +75,14 @@ export default function PetAds() {
               return (
                 item.status === "Pending" && (
                   <ListItem
-                    key={index}
+                    data={item}
+                    key={item._id}
                     image={item.images[0]}
                     name={item.name}
                     breed={item.breed}
                     date={item.date}
                     status={item.status}
-                    buttonLink="/shelter/adoptionList"
+                    buttonLink={"/shelter/ad-detail/" + item._id}
                   />
                 )
               );
@@ -91,16 +92,30 @@ export default function PetAds() {
               return (
                 item.status === "Active" && (
                   <ListItem
-                    key={index}
-                    image={
-                      "https://petify-shelter-server.vercel.app/uploads/images/" +
-                      item.images[0]
-                    }
+                    key={item._id}
+                    image={item.images[0]}
                     name={item.name}
                     breed={item.breed}
                     date={item.date}
                     status={item.status}
-                    buttonLink="/shelter/adoptionList"
+                    buttonLink={"/shelter/ad-detail/" + item._id}
+                  />
+                )
+              );
+            })}
+
+          {active === "Sold" &&
+            petAds.map((item, index) => {
+              return (
+                item.status === "Sold" && (
+                  <ListItem
+                    key={item._id}
+                    image={item.images[0]}
+                    name={item.name}
+                    breed={item.breed}
+                    date={item.date}
+                    status={item.status}
+                    buttonLink={"/shelter/ad-detail/" + item._id}
                   />
                 )
               );
